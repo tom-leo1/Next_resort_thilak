@@ -36,7 +36,7 @@ const DynamicProductDetails = ({productId}) => {
         const bookingDetails ={record, selectedDate};
         try {
             const response = await bookingAction(bookingDetails);
-            if(response.success){
+            if(response?.success){
                 alert('Booking successfully added');
                 router.push('/')
             }
