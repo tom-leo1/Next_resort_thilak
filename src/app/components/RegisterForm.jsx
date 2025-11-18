@@ -2,9 +2,11 @@
 import React, {useRef} from 'react';
 import {registerAction} from "@/app/ServerActions/userAction";
 import Link from "next/link";
+import {useRouter} from "next/navigation";
 
 const RegisterForm = () => {
     const userRef = useRef(null)
+    const router = useRouter()
     const handleRegistration = async (e) => {
         e.preventDefault();
 
@@ -18,7 +20,10 @@ const RegisterForm = () => {
         }
         try {
             const response = await registerAction(registratonDetails)
-            console.log(response, 'thilak');
+            if(response?.status === 'success') {
+                alert('User Registration successfull.')
+                router.push('/login')
+            }
         }
         catch (error) {
             console.log(error.message);
