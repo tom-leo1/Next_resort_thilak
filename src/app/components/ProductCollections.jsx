@@ -9,7 +9,7 @@ const ProductCollections = () => {
     const handleCollections = async ()=>{
         setIsLoading(true);
        try {
-           const response = await axios.get('http://localhost:3000/api/admin')
+           const response = await axios.get('https://next-resort-thilak.vercel.app/api/admin')
            setCollections(response?.data)
            console.log(response?.data);
            setIsLoading(false);

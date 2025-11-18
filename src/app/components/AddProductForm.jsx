@@ -31,7 +31,7 @@ const AddProductForm = () => {
         data.append("image", productDetails.image)
         try {
             // await productAction(productDetails)
-            const response = await axios.post('http://localhost:3000/api/admin/add-product', data)
+            const response = await axios.post('https://next-resort-thilak.vercel.app/api/admin/add-product', data)
             console.log(response,'add procdut response')
             setTitle('')
             setOffer('')

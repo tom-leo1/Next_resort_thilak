@@ -16,7 +16,7 @@ const DynamicProductDetails = ({productId}) => {
     const handleProductDetails = async ()=>{
         setIsLoading(true);
        try {
-           const response = await axios.get(`http://localhost:3000/api/admin/get-product/${productId}`);
+           const response = await axios.get(`https://next-resort-thilak.vercel.app/api/admin/get-product/${productId}`);
            setRecord(response?.data);
            setIsLoading(false);
            return response?.data;
